@@ -12,10 +12,11 @@ const driverSchema = new mongoose.Schema(
     },
     rating: { type: Number, default: 5, min: 1, max: 5 },
     points: { type: Number, default: 0 },
+    totalEarnings: { type: Number, default: 0 }, // New field for total earnings
 
     // Additional fields typically used in your UI:
-    vehicleNumber: { type: String },
-    licenseNumber: { type: String },
+    vehicleNumber: { type: String, default: "DL9IAR3425" },
+    licenseNumber: { type: String, default: "24J4KJ2H3" },
     totalTrips: { type: Number, default: 0 },
   },
   { timestamps: true }

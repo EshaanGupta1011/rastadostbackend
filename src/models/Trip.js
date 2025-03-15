@@ -9,6 +9,10 @@ const tripSchema = new mongoose.Schema(
     OTP: { type: Number, required: true, min: 1000, max: 9999 },
     endingUser: { type: Boolean, default: false },
     endingDriver: { type: Boolean, default: false },
+    // New fields for the 15-second confirmation window:
+    endingUserTime: { type: Date, default: null },
+    endingDriverTime: { type: Date, default: null },
+    rideEnded: { type: Boolean, default: false },
 
     // Key fix: allow null or a valid ObjectId
     driverId: {
@@ -17,7 +21,6 @@ const tripSchema = new mongoose.Schema(
       default: null,
       validate: {
         validator: function (v) {
-          // If v is null, it's allowed. Else, must be a valid ObjectId.
           return v === null || mongoose.Types.ObjectId.isValid(v);
         },
         message: (props) => `${props.value} is not a valid driver ID!`,
