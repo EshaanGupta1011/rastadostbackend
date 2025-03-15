@@ -1,1 +1,46 @@
-node_modules
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-error.log
+
+# Environment variables
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.log
+
+# Runtime files
+pids
+*.pid
+*.seed
+*.pid.lock
+lib-cov
+coverage/
+.DS_Store
+Thumbs.db
+
+# Logs & database dumps
+*.gz
+*.sql
+*.sqlite
+
+# MongoDB Compass exports
+dump/
+data/
+*.lock
+
+# Debugging & editor-specific
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# System files
+*.DS_Store
